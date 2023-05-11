@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interfaz apartamento</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.7.1/dist/ml5.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="node_modules/artyom.js/build/artyom.window.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+
+        <button id="audioAction" onclick="toggleAudio()">Activar audio</button>
+        <button id="videoAction" onclick="toggleVideo()">Desactivar Video</button>
+        <button id="detectionAction" onclick="toggleDetecting()">Iniciar deteccion</button>
+        <button id="interaccionP" onclick="toggleDoors()">Activar/desactivar puertas</button>
+        <button id="interaccionV" onclick="toggleWindows()">Activar/desactivar ventanas</button>
+        <button id="interaccionL" onclick="toggleLights()">Activar/desactivar luces</button>
+        <button id="registerBtn" class="btn btn-primary">Registrar</button>
+        <div id="registerForm" class="mt-3" style="display: none;">
+            <div class="form-group">
+                <label for="nameInput">Nombre:</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Ingrese su nombre">
+            </div>
+            <button id="submitBtn" class="btn btn-success">Registrarse</button>
+        </div>
+
+
+
+
+        <div class="modal fade" id="modalPuertaP" tabindex="-1" aria-labelledby="modalPuertaPLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalPuertaPLabel">Camara puerta del pasillo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="canvasContainer"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cerrar" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="calle">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="room" id="cuartoM">
+                                <div class="puerta-abajo" id="puerta1"></div>
+                                <h3>Cuarto principal</h3>
+                                <div class="window" id="ventana1"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="room" id="sala">
+                                <h3>Sala-comedor</h3>
+                                <div class="window" id="ventana2"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="room" id="cuartoI">
+                                <div class="puerta-abajo" id="puerta2"></div>
+                                <h3>Cuarto individual</h3>
+                                <div class="window" id="ventana3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="pasillo">
+                                <h3>Pasillo</h3>
+                                <div class="puerta-izquierda">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalPuertaP">Abrir
+                                        modal</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="room" id="baño1">
+                                <div class="puerta-arriba" id="puerta3"></div>
+                                <h3>Baño 1</h3>
+                                <div class="window-bottom" id="ventana4"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="room" id="cocina">
+                                <h3>Cocina</h3>
+                                <div class="window-bottom" id="ventana5"></div>
+                                <div class="puerta-abajo" id="puerta4"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="room" id="baño2">
+                                <div class="puerta-arriba" id="puerta5"></div>
+                                <h3>Baño 2</h3>
+                                <div class="window-bottom" id="ventana6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="room" id="lavanderia">
+                                <h3>Lavandería</h3>
+                                <div class="window-bottom" id="ventana7"></div>
+                                <div class="puerta-derecha" id="puerta6"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="patio">
+                                <h3>Patio</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

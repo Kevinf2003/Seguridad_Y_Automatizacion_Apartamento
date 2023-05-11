@@ -1,0 +1,99 @@
+/* Estilos para el pasillo */
+.pasillo {
+    height: 150px;
+    background-color: #8c8c8c;
+    border: 2px solid #666;
+    margin: 0 auto;
+}
+
+/* Estilos para las habitaciones */
+.room {
+    height: 150px;
+    background-color: #b3daff;
+    border: 2px solid #666;
+    position: relative;
+}
+.puerta-arriba {
+    background-color: brown;
+    height: 20px;
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 25px);
+}
+
+.puerta-abajo {
+    background-color: brown;
+    height: 20px;
+    width: 50px;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 25px);
+}
+
+.puerta-derecha {
+    width: 30px;
+    height: 80px;
+    background-color: brown;
+    float: right;
+    clear: both;
+  }
+  
+
+.puerta-izquierda {
+    width: 30px;
+    height: 80px;
+    background-color: brown
+}
+
+.window {
+    width: 50%;
+    height: 25%;
+    background-color: cyan;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.window-bottom {
+    width: 50%;
+    height: 25%;
+    position: relative;
+    background-color: cyan;
+    border: 2px solid black;
+    border-radius: 5px;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+.patio {
+    background-color: #78AB46;
+    /* Color verde para representar el pasto */
+    height: 400px;
+    /* Altura del patio */
+    position: relative;
+    /* Para posicionar los elementos dentro del patio */
+    width: 100%;
+    /* Ancho del patio */
+}
+
+.calle{
+    background-color: gray;
+    border: 2px solid black;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+#videoAction,
+#detectionAction,
+#audioAction {
+    width: 250px;
+    height: 50px;
+    background: blueviolet;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: bold;
+}
