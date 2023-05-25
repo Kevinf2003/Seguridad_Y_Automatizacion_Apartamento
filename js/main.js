@@ -10,6 +10,7 @@ let interaccionP = true;
 let interaccionV = true;
 let interaccionL = true;
 let userName = null;
+let stopDetection = false;
 
 const videoAction = document.getElementById('videoAction');
 
@@ -88,6 +89,7 @@ function setup() {
     canvas.parent(canvasContainer);
     video = createCapture(VIDEO);
     video.size(640, 480);
+    video.hide();
 }
 
 function draw() {
@@ -126,9 +128,7 @@ function onDetected(error, results) {
         detect();
     }
     if (detections[0].label === "person" || detections[0].label === "dog") {
-        setTimeout(function () {
-            detectionAction.disabled = false;
-        }, 1000);
+        stopDetection = true;
         $('#modalPuertaP').modal('hide');
         $('#modalPersonaConocida').modal('show');
     }
@@ -153,6 +153,7 @@ function toggleDetecting() {
     if (!video || !detector) return;
     if (!detecting) {
         detect();
+        stopDetection = false;
         detectionAction.innerText = 'Parar...';
     } else {
         detectionAction.innerText = 'Detectar Objetos';
