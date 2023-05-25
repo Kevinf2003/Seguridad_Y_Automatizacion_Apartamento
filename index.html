@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/ml5@0.7.1/dist/ml5.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
     <script src="node_modules/artyom.js/build/artyom.window.min.js"></script>
 
 </head>
@@ -19,7 +19,7 @@
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="assets/configuracion.png" alt="Botón desplegable" class="configuracion">
+                <img src="src/assets/configuracion.png" alt="Botón desplegable" class="configuracion">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><button class="dropdown-item" onclick="toggleAudio()">Activar audio</button></li>
@@ -48,16 +48,16 @@
                             <div class="room" id="cuartoM">
                                 <div class="puerta-abajo" id="puerta1"></div>
                                 <h3>Cuarto principal</h3>
-                                <img src="assets/bombilla.png" alt="Lámpara" class="lampara">
-                                <img src="assets/cama.png" alt="Cama" class="cama">
+                                <img src="src/assets/bombilla.png" alt="Lámpara" class="lampara">
+                                <img src="src/assets/cama.png" alt="Cama" class="cama">
                                 <div class="window" id="ventana1"></div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="room" id="sala">
                                 <h3>Sala-comedor</h3>
-                                <img src="assets/bombilla.png" alt="lampara" class="lampara">
-                                <img src="assets/comedor.png" alt="Comedor" class="comedor">
+                                <img src="src/assets/bombilla.png" alt="lampara" class="lampara">
+                                <img src="src/assets/comedor.png" alt="Comedor" class="comedor">
                                 <div class="window" id="ventana2"></div>
                             </div>
                         </div>
@@ -65,8 +65,8 @@
                             <div class="room" id="cuartoI">
                                 <div class="puerta-abajo" id="puerta2"></div>
                                 <h3>Cuarto individual</h3>
-                                <img src="assets/bombilla.png" alt="Lámpara" class="lampara">
-                                <img src="assets/cama.png" alt="Cama" class="cama">
+                                <img src="src/assets/bombilla.png" alt="Lámpara" class="lampara">
+                                <img src="src/assets/cama.png" alt="Cama" class="cama">
                                 <div class="window" id="ventana3"></div>
                             </div>
                         </div>
@@ -81,52 +81,53 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="room" id="baño1">
-                            <div class="puerta-arriba" id="puerta3"></div>
-                            <h3>Baño 1</h3>
-                            <div class="window" id="ventana4"></div>
-                            <img src="assets/bombilla.png" alt="lampara" class="lampara">
-                            <img src="assets/baño.png" alt="baño" class="baño">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="room" id="baño1">
+                                <div class="puerta-arriba" id="puerta3"></div>
+                                <h3>Baño 1</h3>
+                                <div class="window" id="ventana4"></div>
+                                <img src="src/assets/bombilla.png" alt="lampara" class="lampara">
+                                <img src="src/assets/baño.png" alt="baño" class="baño">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="room" id="cocina">
+                                <h3>Cocina</h3>
+                                <div class="window" id="ventana5"></div>
+                                <img src="src/assets/bombilla.png" alt="lampara" class="lampara">
+                                <img src="src/assets/cocina.png" alt="cocina" class="cocina">
+                                <div class="puerta-abajo" id="puerta4"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="room" id="baño2">
+                                <div class="puerta-arriba" id="puerta5"></div>
+                                <h3>Baño 2</h3>
+                                <div class="window" id="ventana6"></div>
+                                <img src="src/assets/bombilla.png" alt="lampara" class="lampara">
+                                <img src="src/assets/baño.png" alt="baño" class="baño">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="room" id="cocina">
-                            <h3>Cocina</h3>
-                            <div class="window" id="ventana5"></div>
-                            <img src="assets/bombilla.png" alt="lampara" class="lampara">
-                            <img src="assets/cocina.png" alt="cocina" class="cocina">
-                            <div class="puerta-abajo" id="puerta4"></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="room" id="lavanderia">
+                                <h3>Lavandería</h3>
+                                <div class="window" id="ventana7"></div>
+                                <img src="src/assets/bombilla.png" alt="lampara" class="lampara">
+                                <img src="src/assets/lavadora.png" alt="lavadora" class="lavadora">
+                                <div class="puerta-derecha" id="puerta6"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="room" id="baño2">
-                            <div class="puerta-arriba" id="puerta5"></div>
-                            <h3>Baño 2</h3>
-                            <div class="window" id="ventana6"></div>
-                            <img src="assets/bombilla.png" alt="lampara" class="lampara">
-                            <img src="assets/baño.png" alt="baño" class="baño">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="room" id="lavanderia">
-                            <h3>Lavandería</h3>
-                            <div class="window" id="ventana7"></div>
-                            <img src="assets/bombilla.png" alt="lampara" class="lampara">
-                            <img src="assets/lavadora.png" alt="lavadora" class="lavadora">
-                            <div class="puerta-derecha" id="puerta6"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="patio">
-                            <h3>Patio</h3>
-                            <img src="assets/arbol.png" alt="arbol" class="arbol">
-                            <img src="assets/arbol.png" alt="arbol" class="arbol">
+                        <div class="col-md-8">
+                            <div class="patio">
+                                <h3>Patio</h3>
+                                <img src="src/assets/arbol.png" alt="arbol" class="arbol">
+                                <img src="src/assets/arbol.png" alt="arbol" class="arbol">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,7 +178,7 @@
     </div>
 
 
-    <script src="js/main.js"></script>
+    <script src="src/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
