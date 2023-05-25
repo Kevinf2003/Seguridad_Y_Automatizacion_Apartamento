@@ -83,17 +83,50 @@
     border: 2px solid black;
 }
 
+.lampara{
+    width: 50px
+}
+
+.cama{
+    width: 100px;
+}
+
+.comedor{
+    width: 50px;
+    align-content: center;
+}
+
+.cocina{
+    width: 100px;
+}
+
+.baño{
+    width: 100px;
+}
+
+.lavadora{
+    width: 50px;
+}
+
+.arbol{
+    width: 100px;
+}
+
+.configuracion{
+    width: 30px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+
 canvas {
     border: 1px solid black;
 }
 
-#videoAction,
-#detectionAction,
-#audioAction {
-    width: 250px;
-    height: 50px;
-    background: blueviolet;
-    color: aliceblue;
-    font-size: 18px;
-    font-weight: bold;
-}

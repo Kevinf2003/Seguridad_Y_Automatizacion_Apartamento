@@ -9,7 +9,6 @@ let ventana = document.querySelector("#ventana1")
 let interaccionP = true;
 let interaccionV = true;
 let interaccionL = true;
-let hasGreeted = false;
 let userName = null;
 
 const videoAction = document.getElementById('videoAction');
@@ -101,13 +100,9 @@ function onDetected(error, results) {
         detect();
     }
     if (detections[0].label === "person" || detections[0].label === "dog") {
-        if (!hasGreeted) {
-            // Reproducir un saludo
-            artyom.say("HAY ALGUIEN EN LA PUERTA, BIENVENIDO");
-            hasGreeted = true;
-        }
+        artyom.say("HAY ALGUIEN EN LA PUERTA, BIENVENIDO");
+        toggleDetecting();
     }
-    hasGreeted = false;
 }
 
 function detect() {
@@ -128,12 +123,21 @@ function toggleVideo() {
 
 function toggleDetecting() {
     if (!video || !detector) return;
+
+    detectionAction.disabled = true;
+
     if (!detecting) {
         detect();
         detectionAction.innerText = 'Parar...';
     } else {
         detectionAction.innerText = 'Detectar Objetos';
     }
+
+
+    setTimeout(function () {
+        detectionAction.disabled = false;
+    }, 1000);
+
     detecting = !detecting;
 }
 
