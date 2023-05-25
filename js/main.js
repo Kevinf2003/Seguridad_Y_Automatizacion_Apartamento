@@ -12,7 +12,24 @@ let interaccionL = true;
 let userName = null;
 
 const videoAction = document.getElementById('videoAction');
+
 const detectionAction = document.getElementById('detectionAction');
+
+const registerBtn = document.querySelector('#registerBtn');
+registerBtn.addEventListener('click', function () {
+    const registerForm = document.querySelector('#registerForm');
+    registerForm.style.display = 'block';
+});
+
+const submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('click', function () {
+    registerUser();
+});
+
+const btnPersonaConocida = document.querySelector('#btnPersonaConocida');
+btnPersonaConocida.addEventListener('click', function () {
+    artyom.say("¡Hola! ¡Bienvenido de nuevo!");
+});
 
 function registerUser() {
 
@@ -33,16 +50,7 @@ function registerUser() {
     artyom.say(greeting);
 }
 
-const registerBtn = document.querySelector('#registerBtn');
-registerBtn.addEventListener('click', function () {
-    const registerForm = document.querySelector('#registerForm');
-    registerForm.style.display = 'block';
-});
 
-const submitBtn = document.querySelector('#submitBtn');
-submitBtn.addEventListener('click', function () {
-    registerUser();
-});
 
 function toggleDoors() {
     if (interaccionP) {
@@ -89,6 +97,24 @@ function draw() {
         drawResult(detections[i]);
     }
 }
+function drawResult(object) {
+    boundingBox(object);
+    drawLabel(object);
+}
+
+function boundingBox(object) {
+    stroke('blue');
+    strokeWeight(6);
+    noFill();
+    rect(object.x, object.y, object.width, object.height);
+}
+function drawLabel(object) {
+    noStroke();
+    fill('white');
+    textSize(34);
+    text(object.label, object.x + 15, object.y + 34);
+}
+
 
 function onDetected(error, results) {
     if (error) {
@@ -100,8 +126,11 @@ function onDetected(error, results) {
         detect();
     }
     if (detections[0].label === "person" || detections[0].label === "dog") {
-        artyom.say("HAY ALGUIEN EN LA PUERTA, BIENVENIDO");
-        toggleDetecting();
+        setTimeout(function () {
+            detectionAction.disabled = false;
+        }, 1000);
+        $('#modalPuertaP').modal('hide');
+        $('#modalPersonaConocida').modal('show');
     }
 }
 
@@ -120,27 +149,16 @@ function toggleVideo() {
     }
     videoVisibility = !videoVisibility;
 }
-
 function toggleDetecting() {
     if (!video || !detector) return;
-
-    detectionAction.disabled = true;
-
     if (!detecting) {
         detect();
         detectionAction.innerText = 'Parar...';
     } else {
         detectionAction.innerText = 'Detectar Objetos';
     }
-
-
-    setTimeout(function () {
-        detectionAction.disabled = false;
-    }, 1000);
-
     detecting = !detecting;
 }
-
 var artyom = new Artyom();
 
 function toggleAudio() {
