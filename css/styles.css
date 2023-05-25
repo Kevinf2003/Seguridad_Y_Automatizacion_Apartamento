@@ -47,16 +47,6 @@
     margin: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-.window-bottom {
-    width: 50%;
-    height: 25%;
-    position: relative;
-    background-color: cyan;
-    border: 2px solid black;
-    border-radius: 5px;
-    bottom: 0;
-    margin: 0 auto;
-}
 .patio {
     background-color: #78AB46;
     height: 300px;
